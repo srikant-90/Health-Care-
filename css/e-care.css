@@ -8,10 +8,18 @@
     --text-shadow:.4rem .4rem 0 rgba(0, 0, 0, .2);
     --border:.2rem solid var(--green);
 }
-body{
-  
-     background-repeat: no-repeat;
-     background-attachment: fixed;
+/* Background: Option 3 — Nature & Wellness (user selected) */
+body {
+    background-image: url("../image/bg-nature.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+/* Mobile: fixed background-attachment causes rendering bugs on iOS Safari */
+@media (max-width: 768px) {
+    body { background-attachment: scroll; }
 }
 .dropbtn {
   background-color: white;
@@ -46,11 +54,13 @@ body{
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown-content.show {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn,
+.dropbtn.active {
   background-color: lightgrey;
 }
 
@@ -187,9 +197,14 @@ section{
 
 .home .content h3{
     font-size: 4.5rem;
-    color:white;
+    color: #1a1a2e;
     line-height: 1.8;
-    text-shadow: var(--text-shadow);
+    text-shadow: 2px 2px 8px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.55);
+    display: inline-block;
+    padding: 0.3rem 1.2rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
 }
 
 .home .content p{
@@ -322,6 +337,9 @@ section{
 
 .doctors .box-container .box img{
     height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
     border:var(--border);
     border-radius: .5rem;
     margin-top: 1rem;
@@ -533,6 +551,11 @@ section{
     padding:1rem 0;
 }
 
+.footer {
+    background-color: #1a2a2a;
+    margin-top: 2rem;
+}
+
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
@@ -541,24 +564,32 @@ section{
 
 .footer .box-container .box h3{
     font-size: 2.5rem;
-    color:white;
+    color: #ffffff;
     padding: 1rem 0;
+    border-bottom: 2px solid rgba(22, 160, 133, 0.4);
+    margin-bottom: 0.5rem;
 }
 
 .footer .box-container .box a{
     display: block;
     font-size: 1.5rem;
-    color:var(--light-color);
-    padding: 1rem 0;
+    color: #c8d8d8;
+    padding: 0.7rem 0;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer .box-container .box a:hover{
+    color: #4ecca3;
+    padding-left: 0.5rem;
 }
 
 .footer .box-container .box a i{
     padding-right: .5rem;
-    color:var(--green);
+    color: var(--green);
 }
 
 .footer .box-container .box a:hover i{
-    padding-right:2rem;
+    padding-right: 2rem;
 }
 
 .footer .credit{
@@ -567,12 +598,12 @@ section{
     margin-top: 2rem;
     text-align: center;
     font-size: 2rem;
-    color:var(--light-color);
-    border-top: .1rem solid rgba(0, 0, 0, .1);
+    color: #a0b8b8;
+    border-top: .1rem solid rgba(255, 255, 255, 0.1);
 }
 
 .footer .credit span{
-    color:var(--green);
+    color: #4ecca3;
 }
 /* media queries  */
 @media (max-width:991px){
@@ -622,7 +653,52 @@ section{
         margin:2.5rem;
     }
 
+    /* Minor Fix #23: DISEASE dropdown inside hamburger menu */
+    /* Make it behave as a static block (not absolute) so it fits inside the menu panel */
+    .header .navbar .dropdown {
+        display: block;
+        width: 100%;
+    }
+
+    .header .navbar .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0 2.5rem;
+        font-size: 2rem;
+        color: var(--light-color);
+        background: transparent;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        text-transform: capitalize;
+        letter-spacing: 0;
+    }
+
+    .header .navbar .dropdown-content {
+        position: static;        /* flows inside navbar instead of floating above */
+        box-shadow: none;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        background: #f9fffe;
+        width: 100%;
+        margin-left: 0;
+        z-index: auto;
+    }
+
+    .header .navbar .dropdown-content a {
+        font-size: 1.7rem;
+        padding: 1rem 3.5rem;
+        color: var(--light-color);
+        margin: 0;
+    }
+
+    .header .navbar .dropdown-content div {
+        font-size: 1.3rem;
+        padding: 0.6rem 2.5rem;
+    }
+
 }
+
 
 @media (max-width:450px){
 
@@ -632,21 +708,63 @@ section{
 
 }
 
-body {
-   body {
-    background-image: url("../image/hospital-room-bed-computer-television-ai-generated-image-315262948.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
 }
 
-@media (max-width:768px){
-    body{
-        background-position: center;
-        background-size: cover;
-        background-attachment: scroll;
-    }
+.modal-content {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #aaa;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--black);
 }
