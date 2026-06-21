@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Symptom Checker — E-Care</title>
+    <meta name="description" content="Use E-Care's smart symptom checker to route yourself to the correct medical specialist. Get recommendations instantly.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/symptom-checker.css">
+</head>
+<body>
+
+    <!-- Back Navigation -->
+    <div class="back-nav">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <span class="site-logo"><i class="fas fa-heartbeat"></i> E-Care</span>
+    </div>
+
+    <!-- Checker Portal -->
+    <div class="checker-container">
+        
+        <div class="checker-header">
+            <h1>Smart <span>Symptom Checker</span></h1>
+            <p>Select your symptoms below to find the most appropriate medical specialist for your condition.</p>
+        </div>
+
+        <form id="checker-form">
+            <div class="symptom-groups">
+                
+                <!-- Group 1: Metabolism & Endocrine -->
+                <div class="group-card">
+                    <h3><i class="fas fa-tint"></i> Metabolism</h3>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="diab" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">High Blood Sugar</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="diab" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Excessive Thirst</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="diab" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Frequent Urination</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="diab" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Sudden Weight Loss</span>
+                    </label>
+                </div>
+
+                <!-- Group 2: Bones & Joints -->
+                <div class="group-card">
+                    <h3><i class="fas fa-bone"></i> Bones & Joints</h3>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ortho" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Joint Pain</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ortho" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Joint Stiffness</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ortho" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Chronic Backache</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ortho" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Difficulty Walking</span>
+                    </label>
+                </div>
+
+                <!-- Group 3: Eyes & Vision -->
+                <div class="group-card">
+                    <h3><i class="fas fa-eye"></i> Eyes & Vision</h3>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ophta" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Blurred Vision</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ophta" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Double Vision</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ophta" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Eye Redness / Pain</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="ophta" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Dry or Watery Eyes</span>
+                    </label>
+                </div>
+
+                <!-- Group 4: General Symptoms -->
+                <div class="group-card">
+                    <h3><i class="fas fa-thermometer-half"></i> General</h3>
+                    
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="general" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">High Fever</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="general" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Runny / Stuffy Nose</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="general" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Sore Throat / Cough</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="symptom" value="general" data-weight="1">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-label">Generalized Body Ache</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn">Analyze Symptoms <i class="fas fa-stethoscope"></i></button>
+            </div>
+        </form>
+
+        <!-- Results section -->
+        <div id="results" class="results-box">
+            <h2><i class="fas fa-clipboard-check"></i> Preliminary Assessment</h2>
+            <p class="intro">Based on the symptoms you selected, our routing system recommends scheduling a consultation with the following specialist:</p>
+            
+            <div id="recommendation-target">
+                <!-- JavaScript renders the doctor card here -->
+            </div>
+
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This symptom checker is a rule-based routing helper. It does not provide medical diagnosis. If you are experiencing severe symptoms or a life-threatening medical emergency, please contact emergency ambulance services (108 / 112) immediately.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const doctorsData = {
+            diab: {
+                name: "Dr. Chinmaya Debasis Panda",
+                specialty: "Diabetology Specialist",
+                degree: "MBBS, MD",
+                experience: "15+ Years",
+                image: "image/dr1.jpeg",
+                description: "Expert in metabolic diseases, diabetes care, and endocrinology management."
+            },
+            ortho: {
+                name: "Dr. A V Ranganadham",
+                specialty: "Orthopaedics Specialist",
+                degree: "MBBS, MS - Orthopaedics",
+                experience: "12+ Years",
+                image: "image/dr2.jpeg",
+                description: "Specializes in bone fractures, joint replacements, and chronic back/neck pain."
+            },
+            ophta: {
+                name: "Dr. C K Deepa",
+                specialty: "Ophthalmology Specialist",
+                degree: "MBBS, MS - Ophthalmology",
+                experience: "13+ Years",
+                image: "image/dr3.jpeg",
+                description: "Specialist in eye surgeries, vision correction, glaucoma, and ocular therapies."
+            },
+            general: {
+                name: "General Physician",
+                specialty: "General Medicine & Primary Care",
+                degree: "MBBS, MD - General Medicine",
+                experience: "10+ Years",
+                image: "image/home-img.svg", // Fallback or general image
+                description: "Deals with general illnesses, fevers, respiratory infections, and preventative health checks."
+            }
+        };
+
+        const form = document.getElementById("checker-form");
+        const resultsBox = document.getElementById("results");
+        const target = document.getElementById("recommendation-target");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Count selections
+            let scores = { diab: 0, ortho: 0, ophta: 0, general: 0 };
+            const checked = document.querySelectorAll('input[name="symptom"]:checked');
+
+            if (checked.length === 0) {
+                alert("Please select at least one symptom to analyze!");
+                resultsBox.style.display = "none";
+                return;
+            }
+
+            checked.forEach(input => {
+                const category = input.value;
+                scores[category] += parseInt(input.dataset.weight || 1);
+            });
+
+            // Find category with highest score
+            let maxScore = -1;
+            let recommendedCategory = "general";
+
+            for (const category in scores) {
+                if (scores[category] > maxScore) {
+                    maxScore = scores[category];
+                    recommendedCategory = category;
+                }
+            }
+
+            // Draw tie-breaking handling: if max score is equal for multiple, prefer General Physician unless one is strictly dominant
+            const categories = Object.keys(scores);
+            let tieCount = 0;
+            categories.forEach(cat => {
+                if (scores[cat] === maxScore) tieCount++;
+            });
+
+            if (tieCount > 1 && maxScore > 0) {
+                recommendedCategory = "general"; // Default to general physician for complex/mixed symptoms
+            }
+
+            const doc = doctorsData[recommendedCategory];
+            
+            // Build the card HTML
+            // Note: For General Physician we direct to book without prefilling specific doctor or prefilling "General Physician"
+            const bookingUrl = doc.name === "General Physician" 
+                ? "index.html#book" 
+                : `index.html?doctor=${encodeURIComponent(doc.name)}#book`;
+
+            target.innerHTML = `
+                <div class="recommendation-card">
+                    <div class="doctor-info-flex">
+                        <img src="${doc.image}" alt="${doc.name}" onerror="this.src='image/home-img.svg'">
+                        <div class="doc-text">
+                            <h3>${doc.name}</h3>
+                            <span>${doc.specialty} (${doc.degree})</span>
+                            <p>${doc.description}</p>
+                            <p style="margin-top:0.5rem; font-weight:bold;">Experience: ${doc.experience}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="${bookingUrl}" class="book-now-btn">Book Consultation <i class="fas fa-calendar-check"></i></a>
+                    </div>
+                </div>
+            `;
+
+            // Display results container
+            resultsBox.style.display = "block";
+            
+            // Scroll results into view
+            resultsBox.scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

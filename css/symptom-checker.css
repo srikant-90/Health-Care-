@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --green: #16a085;
+    --dark-green: #0e7060;
+    --black: #2d2d2d;
+    --light-color: #666;
+    --border: .2rem solid var(--green);
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../image/bg-nature.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
+/* Header Navbar Styling */
+.back-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 2rem 7%;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.back-nav a {
+    font-size: 1.8rem;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.back-nav a i {
+    margin-right: .5rem;
+}
+
+.back-nav a:hover {
+    color: var(--black);
+}
+
+.back-nav .site-logo {
+    font-size: 2.2rem;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.back-nav .site-logo i {
+    color: var(--green);
+}
+
+/* Main Container */
+.checker-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.15);
+    border: .1rem solid rgba(22, 160, 133, 0.2);
+}
+
+.checker-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    border-bottom: .2rem solid rgba(22, 160, 133, 0.1);
+    padding-bottom: 2rem;
+}
+
+.checker-header h1 {
+    font-size: 3.2rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.checker-header h1 span {
+    color: var(--green);
+}
+
+.checker-header p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+}
+
+/* Category Grid */
+.symptom-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.group-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: .1rem solid rgba(0,0,0,0.08);
+    box-shadow: 0 .2rem 1rem rgba(0,0,0,0.02);
+}
+
+.group-card h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: .15rem solid var(--green);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.group-card h3 i {
+    color: var(--green);
+}
+
+/* Symptom Checkbox Wrapper */
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.checkbox-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0; width: 0;
+}
+
+.checkmark {
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: #eee;
+    border-radius: .4rem;
+    margin-right: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.checkbox-item:hover input ~ .checkmark {
+    background-color: #ddd;
+}
+
+.checkbox-item input:checked ~ .checkmark {
+    background-color: var(--green);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-item input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-item .checkmark:after {
+    left: .8rem;
+    top: .4rem;
+    width: .6rem;
+    height: 1.2rem;
+    border: solid white;
+    border-width: 0 .25rem .25rem 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    font-size: 1.4rem;
+    color: var(--light-color);
+    line-height: 1.4;
+}
+
+.checkbox-item input:checked ~ .checkbox-label {
+    color: var(--black);
+    font-weight: 500;
+}
+
+/* Action Button */
+.btn-container {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 4rem;
+    background: var(--green);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1.5rem rgba(22, 160, 133, 0.3);
+}
+
+.btn:hover {
+    background: var(--dark-green);
+    letter-spacing: .05rem;
+}
+
+/* Results Box */
+.results-box {
+    background: #f7fffd;
+    border-radius: 1rem;
+    padding: 3rem;
+    border: .2rem dashed var(--green);
+    display: none;
+    animation: slideUp .4s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-box h2 {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.results-box h2 i {
+    color: var(--green);
+}
+
+.results-box p.intro {
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Doctor Recommendation Card */
+.recommendation-card {
+    background: #fff;
+    border-radius: .8rem;
+    padding: 2.5rem;
+    box-shadow: var(--box-shadow);
+    border: .1rem solid rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.doctor-info-flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.recommendation-card img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: .3rem solid var(--green);
+}
+
+.doc-text h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: .4rem;
+}
+
+.doc-text span {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: .4rem;
+}
+
+.doc-text p {
+    font-size: 1.3rem;
+    color: var(--light-color);
+}
+
+.book-now-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--black);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.book-now-btn:hover {
+    background: var(--green);
+    box-shadow: 0 .4rem 1rem rgba(22, 160, 133, 0.2);
+}
+
+.disclaimer {
+    font-size: 1.2rem;
+    color: #b2bec3;
+    line-height: 1.5;
+    border-top: .1rem solid rgba(0,0,0,0.05);
+    padding-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+    .back-nav {
+        padding: 2rem;
+    }
+    .checker-container {
+        margin: 2rem 1.5rem;
+        padding: 2rem;
+    }
+    .recommendation-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    .doctor-info-flex {
+        flex-direction: column;
+    }
+    .book-now-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

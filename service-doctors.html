@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Doctors — E-Care</title>
+    <meta name="description" content="Meet E-Care's expert doctors. Certified specialists in diabetology, orthopaedics, ophthalmology and more. Book a consultation today.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/service.css">
+</head>
+<body>
+
+    <!-- Back Navigation -->
+    <div class="back-nav">
+        <a href="index.html#services"><i class="fas fa-arrow-left"></i> Back to Services</a>
+        <span class="site-logo"><i class="fas fa-heartbeat"></i> E-Care</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="service-hero">
+        <div class="hero-icon"><i class="fas fa-user-md"></i></div>
+        <h1>Our Expert Doctors</h1>
+        <p>Verified, experienced specialists dedicated to providing you the highest quality medical care. Your health is in the best hands.</p>
+        <div class="hero-tags">
+            <span><i class="fas fa-certificate"></i> Verified Specialists</span>
+            <span><i class="fas fa-star"></i> 10+ Years Avg. Exp.</span>
+            <span><i class="fas fa-calendar-check"></i> Easy Booking</span>
+            <span><i class="fas fa-comments"></i> Patient-First Approach</span>
+        </div>
+    </div>
+
+    <div class="service-content">
+
+        <!-- Info Strip -->
+        <div class="info-strip">
+            <div class="strip-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="strip-text">
+                <h3>All Doctors Are Verified & Credentialed</h3>
+                <p>Every doctor at E-Care holds a valid MBBS degree with postgraduate specialization from recognized medical institutions. Their credentials, experience, and patient reviews are verified before being listed on our platform.</p>
+            </div>
+        </div>
+
+        <!-- Doctor Cards -->
+        <div class="section-title">
+            <h2>Meet Our Specialists</h2>
+            <p>Book directly with any of our expert doctors</p>
+        </div>
+
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="image/dr1.jpeg" alt="Dr. Chinmaya Debasis Panda">
+                <div class="doc-info">
+                    <h3>Dr. Chinmaya Debasis Panda</h3>
+                    <div class="specialty"><i class="fas fa-stethoscope"></i> Diabetology Specialist</div>
+                    <div class="exp"><i class="fas fa-briefcase-medical"></i> MBBS, MD — 15+ Years Experience</div>
+                    <p style="font-size:1.4rem; color:#666; margin-bottom:1.5rem;">Specializes in Type 1 & Type 2 Diabetes management, insulin therapy, and metabolic syndrome treatment. Offers comprehensive diabetic care plans.</p>
+                    <a href="index.html#book?doctor=Dr.+Chinmaya+Debasis+Panda" class="book-btn" onclick="sessionStorage.setItem('doc','Dr. Chinmaya Debasis Panda')">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <img src="image/dr2.jpeg" alt="Dr. A V Ranganadham">
+                <div class="doc-info">
+                    <h3>Dr. A V Ranganadham</h3>
+                    <div class="specialty"><i class="fas fa-bone"></i> Orthopaedic Surgeon</div>
+                    <div class="exp"><i class="fas fa-briefcase-medical"></i> MBBS, MS — 12+ Years Experience</div>
+                    <p style="font-size:1.4rem; color:#666; margin-bottom:1.5rem;">Expert in joint replacement, sports injuries, fracture management, and spine disorders. Offers both surgical and non-surgical treatment options.</p>
+                    <a href="index.html#book" class="book-btn">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <img src="image/dr3.jpeg" alt="Dr. C K Deepa">
+                <div class="doc-info">
+                    <h3>Dr. C K Deepa</h3>
+                    <div class="specialty"><i class="fas fa-eye"></i> Ophthalmologist</div>
+                    <div class="exp"><i class="fas fa-briefcase-medical"></i> MBBS, MS — 13+ Years Experience</div>
+                    <p style="font-size:1.4rem; color:#666; margin-bottom:1.5rem;">Specializes in cataract surgery, glaucoma management, retinal disorders, and prescribing corrective lenses. Comprehensive eye care for all ages.</p>
+                    <a href="index.html#book" class="book-btn">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Our Doctors -->
+        <div class="section-title">
+            <h2>Why Choose E-Care Doctors?</h2>
+            <p>We set the bar high so your health is never compromised</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Qualified Specialists</h3>
+                <p>All doctors hold postgraduate degrees (MD/MS/DM) from reputed medical colleges and are registered with the Medical Council of India.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-clock"></i></div>
+                <h3>Punctual Appointments</h3>
+                <p>We respect your time. Our appointment system is designed to minimize waiting time so you see the doctor at your scheduled slot.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-comments"></i></div>
+                <h3>Clear Communication</h3>
+                <p>Our doctors explain your diagnosis, test results, and treatment plan in simple language so you fully understand your health condition.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-file-medical"></i></div>
+                <h3>Detailed Prescriptions</h3>
+                <p>You receive a complete written prescription with medicine names, dosages, duration, and diet/lifestyle recommendations after every consultation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-lock"></i></div>
+                <h3>Confidential Consultations</h3>
+                <p>All patient information, test results, and consultation details are kept strictly confidential in accordance with medical privacy standards.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-redo"></i></div>
+                <h3>Follow-Up Support</h3>
+                <p>Free follow-up consultation within 7 days of your appointment to review test results, adjust medications, or address new concerns.</p>
+            </div>
+        </div>
+
+        <!-- How to Book -->
+        <div class="section-title">
+            <h2>How to Book a Consultation</h2>
+            <p>Fast, simple, no paperwork</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="steps-grid">
+                <div class="step-card">
+                    <h3>Choose Your Doctor</h3>
+                    <p>Browse our specialists above and click "Book Consultation" on the doctor you'd like to see.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Fill the Appointment Form</h3>
+                    <p>Enter your name, phone number, preferred date, and describe your symptoms briefly in the form.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Receive Confirmation Call</h3>
+                    <p>Our team will call you within 2 hours to confirm your slot, share the clinic address, and answer any questions.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Visit & Get Treated</h3>
+                    <p>Arrive at the clinic on your appointment day. Carry any previous reports or prescriptions for reference.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2><i class="fas fa-calendar-plus"></i> Book Your Doctor Appointment</h2>
+            <p>Don't put off your health. Book a consultation with our specialists today — quick, easy, and affordable.</p>
+            <div class="btn-group">
+                <a href="index.html#book" class="btn-primary">Book Now</a>
+                <a href="tel:7848041123" class="btn-outline"><i class="fas fa-phone"></i> Call Us</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
